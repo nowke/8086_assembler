@@ -30,3 +30,8 @@
 
 # Debug files
 *.dSYM/
+
+# Lex & Yacc intermediates
+y.tab.h
+y.tab.c
+lex.yy.c
