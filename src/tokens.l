@@ -1,9 +1,9 @@
 %{
-	/* 
-	 * Tokens listing for 8086 instructions
+    /* 
+     * Tokens listing for 8086 instructions
      */
     #include "y.tab.h"
-	#include <string.h>
+    #include <string.h>
 %}
 arithmetic ("ADD"|"SUB"|"MUL"|"DIV")
 reg8 ("AL"|"AH"|"BH"|"BL"|"CL"|"CH"|"DL"|"DH")
@@ -18,52 +18,52 @@ whitespace [ \t]+
 %%
 
 {arithmetic} { 
-				ECHO; 
-				strcpy(yylval.str, yytext);
-				return ARITHMETIC;
-			 }
+                ECHO; 
+                strcpy(yylval.str, yytext);
+                return ARITHMETIC;
+             }
 
-{hex8}		 {
-				ECHO;
-				strcpy(yylval.str, yytext);
-				return HEX8;
-			 }
+{hex8}       {
+                ECHO;
+                strcpy(yylval.str, yytext);
+                return HEX8;
+             }
 
-{hex16}		 {
-				ECHO;
-				strcpy(yylval.str, yytext);
-				return HEX16;
-			 }
+{hex16}      {
+                ECHO;
+                strcpy(yylval.str, yytext);
+                return HEX16;
+             }
 
 {whitespace} { ECHO; }
 
 {comma} { ECHO; return COMMA; }
 
 "DB" { ECHO; return DB; }
-"DW" { ECHO; return DW; }			 
+"DW" { ECHO; return DW; }            
 
-{reg8}		 {
-				ECHO;
-				strcpy(yylval.str, yytext);
-				return REG8;
-			 }
+{reg8}       {
+                ECHO;
+                strcpy(yylval.str, yytext);
+                return REG8;
+             }
 
-{reg16}		 {
-				ECHO;
-				strcpy(yylval.str, yytext);
-				return REG16;
-			 }
+{reg16}      {
+                ECHO;
+                strcpy(yylval.str, yytext);
+                return REG16;
+             }
 
-{label}		 {
-				ECHO;
-				strcpy(yylval.str, yytext);
-				return LABEL;
-			 }
+{label}      {
+                ECHO;
+                strcpy(yylval.str, yytext);
+                return LABEL;
+             }
 
-{eol}		 {
-				ECHO;
-				return EOL;
-			 }
+{eol}        {
+                ECHO;
+                return EOL;
+             }
 
 %%
 
