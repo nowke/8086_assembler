@@ -10,10 +10,10 @@ lex src/tokens.l
 ## Handle Debug mode
 if [ -n "$1" ]; then
 	if [[ $1 = '--debug' ]]; then
-		yacc -d --verbose --debug src/pass1.y
+		yacc -d --verbose --debug src/grammar.y
 	fi
 else
-	yacc -d src/pass1.y
+	yacc -d src/grammar.y
 fi
 
 cc lex.yy.c y.tab.c -ll -o NASM

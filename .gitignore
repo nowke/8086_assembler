@@ -37,3 +37,6 @@ y.tab.c
 lex.yy.c
 *.output
 NASM
+
+# Folders
+intermediates
