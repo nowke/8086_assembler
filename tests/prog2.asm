@@ -5,3 +5,5 @@ ADD CX,DX
 
 SUB AX,BX
 VAR1 DB 10h
+
+END

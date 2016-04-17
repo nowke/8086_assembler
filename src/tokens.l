@@ -6,7 +6,7 @@
     #include <string.h>
 %}
 arithmetic ("ADD"|"SUB"|"MUL"|"DIV")
-logical ("AND"|"OR"|"NOT"|"SHL"|"SHR"|"ROL"|"ROR"|"TEST")
+logical ("AND"|"OR"|"NOT"|"SHL"|"SHR"|"ROL"|"ROR"|"TEST"|"CMP")
 control ("JMP"|"JE"|"JZ"|"JLE"|"JG"|"JGE"|"JA"|"JB"|"CALL"|"LOOP")
 unary ("INC"|"DEC")
 data ("MOV"|"PUSH"|"POP")

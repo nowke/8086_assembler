@@ -2,13 +2,15 @@
 .DATA
 A DB "KRISHNA"
 B DB 7
+C DW 0102h
+DA DB 05h
 
 .CODE
 begin:
 MOV AX,BX
 MOV DS,AX
 MOV SI,0
-MOV CX,N
+MOV CX,A
 
 L1:
     MOV AL,A[SI]
