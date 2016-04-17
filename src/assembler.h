@@ -18,7 +18,8 @@ SYMTAB initSymTable() {
 	return symbol;
 }
 
-SYMTAB insertToSymTable(SYMTAB root, char* label, int location) {
+SYMTAB insertToSymTable(SYMTAB root, const char* label, int location) {
+	
 	SYMTAB symbol = (SYMTAB) malloc(sizeof(struct symtab));
 	strcpy(symbol->label, label);
 	symbol->location = location;
@@ -28,7 +29,7 @@ SYMTAB insertToSymTable(SYMTAB root, char* label, int location) {
 
 	SYMTAB temp = root;
 
-	while (temp->next != NULL) 
+	while (temp->next != NULL)
 		temp = temp->next;
 
 	temp->next = symbol;
