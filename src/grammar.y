@@ -93,7 +93,9 @@ variable: LABEL value { symbol = insertToSymTable(symbol, $1, locctr); locctr +=
 value: DB HEX8 { increment = 1; } |
        DW HEX16 { increment = 2; } |
        DB STRING { increment = strlen($2) - 2; } |
-       DB NUM { increment = 1; }
+       DB NUM { increment = 1; } |
+       DB '?' { increment = 1; } |
+       DW '?' { increment = 2; }
        ;
 
 arith:  ARITHMETIC datamovement {
@@ -152,7 +154,19 @@ datamovement:
                                     strcat(temp, $1);
                                     strcat(temp, ">");
                                     strcpy(code, temp);
-                                 }
+                                 } |
+        LABEL COMMA REG8         {
+                                    strcpy(temp, "08<");
+                                    strcat(temp, $1);
+                                    strcat(temp, ">");
+                                    strcpy(code, temp);
+                                 } |
+         LABEL COMMA REG16         {
+                                     strcpy(temp, "09<");
+                                     strcat(temp, $1);
+                                     strcat(temp, ">");
+                                     strcpy(code, temp);
+                                  } |
         ;
 
 unaryi:
