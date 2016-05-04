@@ -5,6 +5,9 @@
 ## Clean working directory
 ./clean.sh
 
+## Make Director `intermediates` if not exists
+mkdir -p intermediates
+
 lex src/tokens.l
 
 ## Handle Debug mode
